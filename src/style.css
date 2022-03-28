@@ -3,7 +3,7 @@ body {
   }
   
   .weatherApp {
-    max-width: 550px;
+    max-width: 600px;
     margin: 30px auto;
     padding: 20px;
     border: 1px solid black;
@@ -68,21 +68,20 @@ body {
     text-decoration: none}
 
 .weather-forecast{
-    text-align:center;
-    margin-top: 15px;
-    color: black
-    
+  margin-top: 20px;
+  text-decoration: none;
+  text-align: center;
 }
- .weather-forecast-date{
-     font-size: 16px;
-     opacity: 0.5;
- }
+.weather-forecast-date {
+  font-size: 16px;
+  color: black;
+  opacity: 0.6;
+}
 
- .minimum-temp{
-    opacity: 0.5;
- }
+  .weather-forecast-temp{
+    font-size: 13px;
+  }
 
- .weather-forecast-temp{
-     font-size: 13px;
-     margin-bottom: 10px;
- }
+  .weather-forecast-temp-min{
+    opacity: 0.6;
+  }

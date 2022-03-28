@@ -16,97 +16,58 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <title>Weather Forecast App</title>
   </head>
   <body>
     <div class="container">
-<div class="weatherApp">
-  <form id="search-form">
-    <div class="row">
-      <div class="col-9">
+     <div class="weatherApp">
+      <form id="search-form">
+     <div class="row">
+    <div class="col-9">
         <input type="search" id="searchCity" placeholder="Enter City" class="form-control" autocomplete="off"/>
-      </div>
-      <div class="col-3">
-      <input type="submit" value="search" class="btn btn-primary w-100"> 
     </div>
-
-  </div>
-  </form>
-    <h1 id="city">Harare</h1>
-          <ul>
-            <li id="date">
-              Thursday 4:57
-            </li>
-            <li id="condition">Mostly Cloudy</li>
-              </ul>
+      <div class="col-3">
+       <input type="submit" value="search" class="btn btn-primary w-100"> 
+      </div>
+    </div>
+        </form>
+        <h1 id="city">
+            Harare
+        </h1>
+      <ul>
+        <li id="date">
+           Thursday 4:57
+       </li>
+        <li id="condition">
+            Mostly Cloudy
+        </li>
+      </ul>
               
     <div class="row">
-        <div class="col-md-7">
-          <img class="icon"  src="//ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png">
-       <strong id="temperature"> 19</strong>
-    
+    <div class="col-md-7">
+      <img class="icon" src="//ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png">
+       <strong id="temperature">
+            19
+        </strong>
         <span id="units">
           <a href="#" id="cel-link" class="active">℃ </a> | <a href="#" id="fah-link" class="active"> ℉</a></span>
-        
-      </div>
-      <div class = "col-md-5">
-        <ul>
-      
+    </div>
+
+    <div class = "col-md-5">
+      <ul>
         <li> Humidity:
           <span id="humidity"></span>%
         </li>
         <li>
-            Wind: <span id="wind"></span>Km/h
-          </li>
-          </ul>
-        </div>
-        <div class="weather-forecast">
-            <div class="row">
-                <div class="col-md-2">
-                   <div class="weather-forecast-date">Fri</div> 
-                    <img class="icon"  src="//http:openweathermap.org/img/wn/50@2x.png">
-                   <div class="weather-forecast-temp">
-                    <span class="maximum-temp"> 18°</span>|<span class="minimum-temp"> 12°</span>
-              </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="weather-forecast-date">Sat</div> 
-                    <img class="icon"  src="//ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png">
-                    <div class="weather-forecast-temp">
-                        <span class="maximum-temp"> 17°</span>|<span class="minimum-temp"> 11°</span>
-                  </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="weather-forecast-date">Sun</div> 
-                    <img class="icon"  src="//ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png">
-                    <div class="weather-forecast-temp">
-                        <span class="maximum-temp"> 16°</span>|<span class="minimum-temp"> 10°</span>
-                  </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="weather-forecast-date">Mon</div> 
-                    <img class="icon"  src="//ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png">
-                    <div class="weather-forecast-temp">
-                        <span class="maximum-temp"> 15°</span>|<span class="minimum-temp"> 9°</span>
-                  </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="weather-forecast-date">Tue</div> 
-                    <img class="icon"  src="//ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png">
-                    <div class="weather-forecast-temp">
-                        <span class="maximum-temp"> 14°</span>|<span class="minimum-temp"> 8°</span>
-                  </div> 
-                </div>
-                <div class="col-md-2">
-                    <div class="weather-forecast-date">Wed</div> 
-                    <img class="icon"  src="//ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png">
-                    <div class="weather-forecast-temp">
-                        <span class="maximum-temp"> 13°</span>|<span class="minimum-temp"> 7°</span>
-                  </div> 
-                </div>
-                
-            </div>
-        </div>
+            Wind:<span id="wind"></span>Km/h
+        </li>
+     </ul>
+    </div>
+
+    <div class="weather-forecast" id="weather-forecast"> 
+      
+    </div>
       </div>
       <small> <a href="https://github.com/VarsharaneeAR/Weather-App">App was coded </a> by V.A.R</small>
       </div>
