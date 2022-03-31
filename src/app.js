@@ -15,11 +15,10 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast(){
+function displayForecast(response){
     let forecastElement = document.querySelector("#weather-forecast");
-
-    let forecastHTML= `<div class="row">`;
     let days = [ "Tue","Wed","Thur","Fri","Sat","Sun"];
+    let forecastHTML= `<div class="row">`;
     days.forEach(function(day){
     forecastHTML = 
     forecastHTML + `
@@ -35,10 +34,15 @@ function displayForecast(){
         });
 
         forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML= forecastHTML;
+        forecastElement.innerHTML= forecastHTML;
 }
 
-
+function getForecast(coordinates)
+{ console.log(coordinates);
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayTemperature(response)
 {
@@ -58,6 +62,8 @@ humidityElement.innerHTML=response.data.main.humidity;
 windElement.innerHTML= Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt*1000);
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
+getForecast(response.data.coord);
 }
 
 function search (city){
@@ -73,8 +79,6 @@ let cityInputElement = document.querySelector("#searchCity");
 search(cityInputElement.value)
 }
 
-
- 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -103,4 +107,3 @@ let celLink = document.querySelector("#cel-link");
 celLink.addEventListener("click",showCelsiusTemp);
 
 search("Harare");
-displayForecast();
