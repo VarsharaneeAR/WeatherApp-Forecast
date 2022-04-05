@@ -16,19 +16,27 @@ return `${day} ${hours}:${minutes}`;
 }
 
 function displayForecast(response){
+    let forecast = response.data.daily; 
     let forecastElement = document.querySelector("#weather-forecast");
     let days = [ "Tue","Wed","Thur","Fri","Sat","Sun"];
+
     let forecastHTML= `<div class="row">`;
-    days.forEach(function(day){
+    days.forEach(function(forecastDay){
     forecastHTML = 
-    forecastHTML + `
+    forecastHTML + 
+    `
          <div class="col-2"> 
             <div class="weather-forecast-date">
-              ${day}
+              ${forecastDay.dt}
             </div>
-              <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" alt="" width="40"/>
-            <div class="weather-forecast-temp"> 
-              <span class="weather-forecast-temp-max">18°</span>|<span class="weather-forecast-temp-min">12°</span> 
+            <img
+            src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
+            alt=""
+            width="42"
+          />
+              <span class="weather-forecast-temp-max"> ${forecastDay.temp.max}°</span>|<span class="weather-forecast-temp-min">${forecastDay.temp.min}°</span> 
             </div>
             </div>`;
         });
