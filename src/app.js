@@ -109,14 +109,7 @@ search(cityInputElement.value)
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-function showFahrenheitTemp(event){
-    event.preventDefault();
-    celLink.classList.remove("active");
-    fahLink.classList.add("active");
-   let fahrenheitTemp= (celsiusTemperature* 9)/5 + 32;
-let tempElement = document.querySelector("#temperature");
-tempElement.innerHTML= Math.round(fahrenheitTemp);
-}
+
 function showCelsiusTemp(event){
     event.preventDefault();
     let tempElement = document.querySelector("#temperature");
@@ -127,8 +120,6 @@ function showCelsiusTemp(event){
 let celsiusTemperature = null;
 
 
-let fahLink = document.querySelector("#fah-link");
-fahLink.addEventListener("click",showFahrenheitTemp);
 
 let celLink = document.querySelector("#cel-link");
 celLink.addEventListener("click",showCelsiusTemp);
